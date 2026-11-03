@@ -3,47 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Génie Logiciel</title>
+    <title>Portfolio | Ingénierie Software & Web</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; color: #333; }
-        header { background: #0056b3; color: white; padding: 20px; text-align: center; border-radius: 8px; }
-        h1 { margin: 0; }
-        section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
-        ul { list-style-type: square; }
-        .badge { background: #e0e0e0; padding: 5px 10px; border-radius: 4px; display: inline-block; margin: 3px; font-weight: bold; }
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-heading: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+
+        header { background: var(--primary-color); color: white; padding: 60px 20px 40px; text-align: center; }
+        header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+        header p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 20px; }
+        .tagline { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        section { margin-bottom: 50px; }
+        .section-title { font-size: 1.6rem; color: var(--text-heading); border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; }
+        .card h3 { color: var(--accent-color); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: #eff6ff; color: #1d4ed8; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+
+        .project-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+        .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .project-item h4 { font-size: 1.1rem; color: var(--text-heading); margin-bottom: 5px; }
+
+        .contact-box { background: var(--primary-color); color: white; padding: 30px; border-radius: 12px; text-align: center; }
+        .contact-box p { margin-bottom: 15px; color: #cbd5e1; }
+        .btn-contact { background: var(--accent-color); color: white; text-decoration: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; display: inline-block; transition: background 0.3s; }
+        .btn-contact:hover { background: #1d4ed8; }
+
+        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Spécialiste en Génie Logiciel</h1>
-        <p>Développement Web, Gestion de Données & Solutions IT</p>
+        <span class="tagline">Génie Logiciel & Data</span>
+        <h1>Portfolio Professionnel</h1>
+        <p>Ingénierie logicielle, développement web et administration de bases de données.</p>
     </header>
 
-    <section>
-        <h2>À propos de moi</h2>
-        <p>Diplômée en Génie Logiciel, passionnée par la conception de solutions informatiques, l'analyse de données et le développement d'applications web performantes.</p>
-    </section>
+    <div class="container">
+        
+        <!-- À propos -->
+        <section>
+            <h2 class="section-title">Profil & Philosophie</h2>
+            <div class="card">
+                <p>Spécialiste en génie logiciel axée sur la conception d'outils web fiables, l'optimisation de données et le suivi applicatif. Orientée vers la résolution de problèmes métier et la livraison de solutions performantes, sécurisées et bien documentées.</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>Compétences Techniques</h2>
-        <span class="badge">PHP / Laravel</span>
-        <span class="badge">HTML / CSS / Bootstrap</span>
-        <span class="badge">MySQL / SQL</span>
-        <span class="badge">WordPress</span>
-        <span class="badge">Python</span>
-        <span class="badge">ODK & SIG</span>
-    </section>
+        <!-- Compétences -->
+        <section>
+            <h2 class="section-title">Domaines d'Expertise</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3><i class="fas fa-code"></i> Développement Web</h3>
+                    <div class="tags">
+                        <span class="tag">HTML5 / CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP / Laravel</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">WordPress</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-database"></i> Data & Systèmes</h3>
+                    <div class="tags">
+                        <span class="tag">MySQL / SQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Archivage Numérique</span>
+                        <span class="tag">ODK & SIG / KML</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-gears"></i> Gestion & Outils</h3>
+                    <div class="tags">
+                        <span class="tag">Modélisation UML</span>
+                        <span class="tag">Maintenance IT</span>
+                        <span class="tag">SEO & Marketing Web</span>
+                        <span class="tag">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>Projets & Réalisations</h2>
-        <ul>
-            <li><strong>Système de Gestion & Badges :</strong> Conception et mise en place d'applications web personnalisées.</li>
-            <li><strong>Administration de bases de données :</strong> Structuration, nettoyage et analyse de données.</li>
-            <li><strong>Intégration Web & SEO :</strong> Gestion et optimisation de sites web.</li>
-        </ul>
-    </section>
+        <!-- Projets & Expériences -->
+        <section>
+            <h2 class="section-title">Réalisations Clés</h2>
+            <div class="card">
+                <div class="project-item">
+                    <h4>Application Web de Gestion de Badges & Identifiants</h4>
+                    <p>Développement d'une solution sur-mesure (Laravel / MySQL) pour la génération, l'attribution et le suivi sécurisé des badges d'entreprise.</p>
+                </div>
+                <div class="project-item">
+                    <h4>Collecte, Structuration & Analyse de Données Terrain</h4>
+                    <p>Mise en place de formulaires ODK et intégration des données SIG (cartes KML) pour la géolocalisation et le suivi analytique.</p>
+                </div>
+                <div class="project-item">
+                    <h4>Administration de Sites Web & Optimisation SEO</h4>
+                    <p>Gestion, hébergement et référencement naturel de plateformes sous CMS (WordPress / Genuka) avec suivi de visibilité.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+            <div class="contact-box">
+                <h2>Envie de collaborer sur un projet ?</h2>
+                <p>N'hésitez pas à consulter mes dépôts GitHub ou à me contacter directement.</p>
+                <a href="https://github.com/synthiayoumbi" class="btn-contact" target="_blank"><i class="fab fa-github"></i> Mon Profil GitHub</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Portfolio Ingénierie Logicielle | Tous droits réservés</p>
+    </footer>
 
 </body>
 </html>
