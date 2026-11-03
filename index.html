@@ -661,4 +661,161 @@
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
                     <h3>Analyse & Outils</h3>
-                    <div class="
+                    <div class="pills">
+                        <span class="pill">Excel Avancé</span>
+                        <span class="pill">VBA Automatisations</span>
+                        <span class="pill">Reporting KPI</span>
+                        <span class="pill">WordPress</span>
+                        <span class="pill">Git / GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Réalisations</span>
+                <h2 class="section-title">Projets Récents</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-radio"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3 class="project-title">Plateforme de Streaming & Archivage</h3>
+                            <p class="project-desc">Application web d'archivage automatique et de diffusion audio en direct avec gestion complète des médias.</p>
+                        </div>
+                        <div class="pills">
+                            <span class="pill">PHP</span>
+                            <span class="pill">MySQL</span>
+                            <span class="pill">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3 class="project-title">Outil de Calcul & Suivi Analytique</h3>
+                            <p class="project-desc">Développement de scripts VBA personnalisés pour l'automatisation des calculs d'itinéraires et rapports KPI.</p>
+                        </div>
+                        <div class="pills">
+                            <span class="pill">Excel VBA</span>
+                            <span class="pill">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3 class="project-title">Système de Géolocalisation Web</h3>
+                            <p class="project-desc">Cartographie interactive pour le suivi et la localisation d'infrastructures et d'établissements de santé.</p>
+                        </div>
+                        <div class="pills">
+                            <span class="pill">JavaScript</span>
+                            <span class="pill">Web API</span>
+                            <span class="pill">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-grid">
+                    <div class="contact-left">
+                        <h3>Travaillons ensemble !</h3>
+                        <p>Vous avez un projet en tête ou une opportunité à me proposer ? N'hésitez pas à me contacter directement.</p>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>synthiaclementine21@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+237 659 263 235</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Bafoussam, Cameroun</span>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="mailto:synthiaclementine21@gmail.com" method="POST" enctype="text/plain">
+                        <input type="text" class="form-input" placeholder="Votre Nom" required>
+                        <input type="email" class="form-input" placeholder="Votre Email" required>
+                        <textarea class="form-input" rows="4" placeholder="Votre Message..." required></textarea>
+                        <button type="submit" class="btn btn-primary" style="justify-content: center;">
+                            Envoyer le message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Memdjofang Youmbi Clémentine Synthia. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT MATRIX BACKGROUND EFFECT -->
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const letters = '01PHPJSHTMLCSSLARAVELSQLVBA';
+        const fontSize = 14;
+        let columns = canvas.width / fontSize;
+        let drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.08)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#60a5fa';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 50);
+    </script>
+</body>
+</html>
