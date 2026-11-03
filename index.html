@@ -3,134 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Ingénierie Software & Web</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Synthiae Youmbi | Ingénieure Logiciel & Data</title>
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #334155;
-            --text-heading: #1e293b;
+            --bg-color: #0b0f19;
+            --surface-color: #161e2e;
+            --border-color: #2a3447;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-stack: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        header { background: var(--primary-color); color: white; padding: 60px 20px 40px; text-align: center; }
-        header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-        header p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 20px; }
-        .tagline { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
 
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        section { margin-bottom: 50px; }
-        .section-title { font-size: 1.6rem; color: var(--text-heading); border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; }
-        .card h3 { color: var(--accent-color); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag { background: #eff6ff; color: #1d4ed8; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+        .badge-role {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
 
-        .project-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
-        .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .project-item h4 { font-size: 1.1rem; color: var(--text-heading); margin-bottom: 5px; }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
 
-        .contact-box { background: var(--primary-color); color: white; padding: 30px; border-radius: 12px; text-align: center; }
-        .contact-box p { margin-bottom: 15px; color: #cbd5e1; }
-        .btn-contact { background: var(--accent-color); color: white; text-decoration: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; display: inline-block; transition: background 0.3s; }
-        .btn-contact:hover { background: #1d4ed8; }
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--bg-color);
+        }
+
+        .btn-light:hover {
+            background: #e2e8f0;
+        }
+
+        /* CONTAINER & SECTIONS */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* CARDS & GRIDS */
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .icon-box {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            color: var(--text-muted);
+            padding: 6px 0;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .skill-card li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* PROJECTS CARDS */
+        .project-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project-header i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .project-header h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tags span {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* CONTACT BANNER */
+        .contact-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            padding: 50px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .contact-banner h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .contact-banner p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: var(--surface-color);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="tagline">Génie Logiciel & Data</span>
-        <h1>Portfolio Professionnel</h1>
-        <p>Ingénierie logicielle, développement web et administration de bases de données.</p>
+    <!-- HERO / EN-TÊTE -->
+    <header class="hero">
+        <div class="hero-container">
+            <span class="badge-role"><i class="fas fa-terminal"></i> Génie Logiciel & Systèmes IT</span>
+            <h1>Synthiae Youmbi</h1>
+            <p class="subtitle">Conception d'applications web, administration de bases de données et optimisation des processus numériques.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Me Contacter</a>
+                <a href="https://github.com/synthiayoumbi" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <!-- À propos -->
-        <section>
-            <h2 class="section-title">Profil & Philosophie</h2>
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+
+        <!-- SECTION À PROPOS -->
+        <section id="about" class="section">
+            <h2 class="section-title">À Propos</h2>
             <div class="card">
-                <p>Spécialiste en génie logiciel axée sur la conception d'outils web fiables, l'optimisation de données et le suivi applicatif. Orientée vers la résolution de problèmes métier et la livraison de solutions performantes, sécurisées et bien documentées.</p>
+                <p>Diplômée en Génie Logiciel et active dans le pilotage des opérations techniques et de la gestion de données. Passionnée par le développement de solutions web robustes, l'architecture logicielle (UML) et la structuration de bases de données relationnelles pour répondre aux besoins opérationnels complexes.</p>
             </div>
         </section>
 
-        <!-- Compétences -->
-        <section>
-            <h2 class="section-title">Domaines d'Expertise</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3><i class="fas fa-code"></i> Développement Web</h3>
-                    <div class="tags">
-                        <span class="tag">HTML5 / CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">PHP / Laravel</span>
-                        <span class="tag">Bootstrap</span>
-                        <span class="tag">WordPress</span>
+        <!-- SECTION COMPÉTENCES -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Expertises Techniques</h2>
+            <div class="grid-3">
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3>Développement Web</h3>
+                    <ul>
+                        <li>PHP / Laravel / Bootstrap</li>
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                        <li>WordPress & CMS / Genuka</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-database"></i></div>
+                    <h3>Bases de Données & Data</h3>
+                    <ul>
+                        <li>MySQL / SQL</li>
+                        <li>Python & Scripts d'automatisation</li>
+                        <li>Formulaires ODK & Cartographie KML/SIG</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-tools"></i></div>
+                    <h3>Ingénierie & Outils</h3>
+                    <ul>
+                        <li>Modélisation UML</li>
+                        <li>Maintenance IT & Matériel</li>
+                        <li>Git, GitHub & Web SEO</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION RÉALISATIONS -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projets & Réalisations Professionnelles</h2>
+            <div class="grid-2">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-id-card"></i>
+                        <h3>Système de Gestion de Badges</h3>
+                    </div>
+                    <p>Développement d'une application sur-mesure (Laravel / MySQL) pour automatiser la génération, l'attribution et le suivi sécurisé des identifiants et badges du personnel.</p>
+                    <div class="tech-tags">
+                        <span>Laravel</span><span>MySQL</span><span>PHP</span>
                     </div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-database"></i> Data & Systèmes</h3>
-                    <div class="tags">
-                        <span class="tag">MySQL / SQL</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Archivage Numérique</span>
-                        <span class="tag">ODK & SIG / KML</span>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Traitement Data & Cartographie SIG</h3>
+                    </div>
+                    <p>Mise en place de collectes de données de terrain via ODK, calcul de coordonnées GPS et génération de fichiers KML pour l'analyse cartographique.</p>
+                    <div class="tech-tags">
+                        <span>ODK</span><span>GPS Waypoints</span><span>KML / SIG</span>
                     </div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-gears"></i> Gestion & Outils</h3>
-                    <div class="tags">
-                        <span class="tag">Modélisation UML</span>
-                        <span class="tag">Maintenance IT</span>
-                        <span class="tag">SEO & Marketing Web</span>
-                        <span class="tag">Git & GitHub</span>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-globe"></i>
+                        <h3>Administration Web & Plateformes</h3>
+                    </div>
+                    <p>Gestion, configuration et maintenance de sites web sous WordPress et Genuka, optimisation du référencement naturel (SEO) et gestion de boîtes mail professionnelles.</p>
+                    <div class="tech-tags">
+                        <span>WordPress</span><span>Genuka</span><span>cPanel</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>Archivage Numérique & Automatisation</h3>
+                    </div>
+                    <p>Mise en place de structures d'archivage sécurisées, traitement de flux d'informations et écriture de scripts Python pour l'optimisation des tâches administratives et techniques.</p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>Windows 10</span><span>Archivage</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projets & Expériences -->
-        <section>
-            <h2 class="section-title">Réalisations Clés</h2>
-            <div class="card">
-                <div class="project-item">
-                    <h4>Application Web de Gestion de Badges & Identifiants</h4>
-                    <p>Développement d'une solution sur-mesure (Laravel / MySQL) pour la génération, l'attribution et le suivi sécurisé des badges d'entreprise.</p>
-                </div>
-                <div class="project-item">
-                    <h4>Collecte, Structuration & Analyse de Données Terrain</h4>
-                    <p>Mise en place de formulaires ODK et intégration des données SIG (cartes KML) pour la géolocalisation et le suivi analytique.</p>
-                </div>
-                <div class="project-item">
-                    <h4>Administration de Sites Web & Optimisation SEO</h4>
-                    <p>Gestion, hébergement et référencement naturel de plateformes sous CMS (WordPress / Genuka) avec suivi de visibilité.</p>
-                </div>
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="section">
+            <div class="contact-banner">
+                <h2>Prête pour de nouveaux défis technologiques</h2>
+                <p>Vous avez un projet de développement, une mission technique ou une collaboration à proposer ? Discutons-en.</p>
+                <a href="https://github.com/synthiayoumbi" target="_blank" class="btn btn-light"><i class="fab fa-github"></i> Me Contacter sur GitHub</a>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section>
-            <div class="contact-box">
-                <h2>Envie de collaborer sur un projet ?</h2>
-                <p>N'hésitez pas à consulter mes dépôts GitHub ou à me contacter directement.</p>
-                <a href="https://github.com/synthiayoumbi" class="btn-contact" target="_blank"><i class="fab fa-github"></i> Mon Profil GitHub</a>
-            </div>
-        </section>
+    </main>
 
-    </div>
-
+    <!-- PIED DE PAGE -->
     <footer>
-        <p>© 2026 - Portfolio Ingénierie Logicielle | Tous droits réservés</p>
+        <p>&copy; 2026 - Synthiae Youmbi. Conçu avec rigueur et professionnalisme.</p>
     </footer>
 
 </body>
